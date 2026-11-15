@@ -1,0 +1,30 @@
+<section class="flex-center">
+  <div class="content-box">
+    <h2 class="gradient-text">Завдання одновимірні масиви</h2>
+    <p>
+      Дані про направлення вітру (північний, південний, східний, західний) і силі вітру за декаду листопада зберігаються в масиві. 
+      Визначити, скільки днів дув південний вітер з силою, що перевищує 8 м/с.
+    </p>
+  </div>
+</section>
+
+<section class="flex-center">
+  <button class="btn" (click)="calculate()">
+    <span>Згенерувати дані вітру</span>
+  </button>
+</section>
+
+<section class="flex-center result-section" *ngIf="arrayOne.windData.length > 0">
+  <h2 class="gradient-text">Дані за декаду (10 днів)</h2>
+  
+  <div class="flex-col" style="margin-bottom: 20px;">
+    <p *ngFor="let day of arrayOne.windData; let i = index" class="result-text">
+      День {{ i + 1 }}: <strong>{{ day.direction }}</strong> вітер, швидкість <strong>{{ day.speed }}</strong> м/с
+    </p>
+  </div>
+  
+  <h2 class="gradient-text">Результат обрахунків</h2>
+  <h3 class="result-text" style="color: var(--accent-color);">
+    Кількість цільових днів: {{ arrayOne.targetDaysCount }}
+  </h3>
+</section>

@@ -101,3 +101,11 @@ input:focus {
   font-size: 1.2rem;
   font-weight: normal;
 }
+
+@media (max-width: 768px) {
+  fieldset {
+    min-width: 100%; 
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}

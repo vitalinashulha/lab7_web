@@ -1,0 +1,32 @@
+<section class="flex-center">
+  <div class="content-box">
+    <h2 class="gradient-text">Завдання двовимірні масиви</h2>
+    <p>
+      Дано цілочисельний масив 5х5. Знайти кількість додатних елементів, розташованих вище лівої (головної) діагоналі.
+    </p>
+  </div>
+</section>
+
+<section class="flex-center">
+  <button class="btn" (click)="calculate()">
+    <span>Згенерувати матрицю</span>
+  </button>
+</section>
+
+<section class="flex-center result-section" *ngIf="arrayTwo.b.length > 0">
+  <h2 class="gradient-text">Двовимірний масив (5x5)</h2>
+  
+  <table class="matrix-table">
+    <tr *ngFor="let row of arrayTwo.b; index as i">
+      <td *ngFor="let cell of row; index as j" 
+          [class.highlight]="j > i && cell > 0">
+        {{ cell }}
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="gradient-text" style="margin-top: 20px;">Результат обрахунків</h2>
+  <h3 class="result-text" style="color: var(--accent-color);">
+    Кількість додатних елементів вище діагоналі: {{ arrayTwo.positiveCountAboveDiag }}
+  </h3>
+</section>
